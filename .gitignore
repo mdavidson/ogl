@@ -16,3 +16,7 @@
 *.exe
 *.out
 *.app
+/src/*.suo
+/src/*.sdf
+/src/Debug
+/src/ogl.vcxproj.user
