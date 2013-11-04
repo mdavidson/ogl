@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.c" />
+    <ClCompile Include="ball_control.c" />
+    <ClCompile Include="game_control.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E364D28B-C069-489E-96D7-781379C6017A}</ProjectGuid>
