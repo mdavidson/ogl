@@ -1,4 +1,4 @@
-/*
+/*  BOBBY HOLLOWAY EDITING PLUS PLUS
     main.c
 */
 
@@ -58,6 +58,7 @@ int main( int argc, char *argv[] )
         glfwPollEvents();
     }
 
+	glfwDestroyWindow(window);
     glfwTerminate();
     return( 0 );
 }
