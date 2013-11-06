@@ -4,6 +4,8 @@
 
 #include <GLFW\glfw3.h>
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "game_control.h"
 
 
@@ -12,11 +14,31 @@ static void render_game
     game_control_struct *game_ctrl
     );
 
+static void error_callback
+    (
+    int error,
+    const char* description
+    );
+
+static void key_callback
+    (
+    GLFWwindow* window, 
+    int key, 
+    int scancode, 
+    int action,
+    int mods
+    );
 
 int main( int argc, char *argv[] )
 {
     GLFWwindow* window;
     game_control_struct game_ctrl;
+
+    /*
+    Setting error callback to receive any errors during
+    initialization
+    */
+    glfwSetErrorCallback(error_callback);
 
     /*
     Initialize library
@@ -43,6 +65,11 @@ int main( int argc, char *argv[] )
     Initialize game state
     */
     init_game_state( &game_ctrl );
+
+    /*
+    Set key callback to receive key events
+    */
+    glfwSetKeyCallback(window, key_callback);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
@@ -84,4 +111,38 @@ render_game_state( game_ctrl );
 
 glFlush();
 
+}
+
+/*
+*
+*   error_callback
+*
+*
+*/
+static void error_callback
+    (
+    int error,
+    const char* description
+    )
+{
+    fputs(description, stderr);
+}
+
+/*
+*
+*   key_callback
+*
+*
+*/
+static void key_callback
+    (
+    GLFWwindow* window, 
+    int key, 
+    int scancode, 
+    int action,
+    int mods
+    )
+{
+    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, GL_TRUE);
 }
