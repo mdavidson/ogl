@@ -57,8 +57,8 @@ int main( int argc, char *argv[] )
         /* Poll for and process events */
         glfwPollEvents();
     }
-
-	glfwDestroyWindow(window);
+    
+    glfwDestroyWindow(window);
     glfwTerminate();
     return( 0 );
 }
