@@ -6,8 +6,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "game_control.h"
 
+#include "game_control.h"
 
 static void render_game
     (
@@ -29,10 +29,15 @@ static void key_callback
     int mods
     );
 
+/*
+Master game control structure
+*/
+game_control_struct game_ctrl;
+
+
 int main( int argc, char *argv[] )
 {
     GLFWwindow* window;
-    game_control_struct game_ctrl;
 
     /*
     Setting error callback to receive any errors during
@@ -125,7 +130,8 @@ static void error_callback
     const char* description
     )
 {
-    fputs(description, stderr);
+fputs(description, stderr);
+
 }
 
 /*
@@ -143,6 +149,17 @@ static void key_callback
     int mods
     )
 {
-    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, GL_TRUE);
+switch( key )
+    {
+    case GLFW_KEY_ESCAPE:
+        if( action == GLFW_PRESS )
+            {
+            glfwSetWindowShouldClose(window, GL_TRUE);
+            }
+        break;
+    
+    default:
+        handle_game_key_press( &game_ctrl, key, scancode, action, mods );
+        break;
+    }
 }

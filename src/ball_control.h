@@ -21,6 +21,12 @@ void init_ball_posn
     game_control_struct *game_ctrl
     );
 
+void move_ball_posn
+    (
+    game_control_struct *game_ctrl,
+    int                  key
+    );
+
 void updt_ball_posn
     (
     game_control_struct *game_ctrl

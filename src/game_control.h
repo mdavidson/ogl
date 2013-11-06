@@ -55,4 +55,13 @@ void render_game_state
     game_control_struct *game_ctrl
     );
 
+void handle_game_key_press
+    (
+    game_control_struct *game_ctrl,
+    int key, 
+    int scancode, 
+    int action,
+    int mods
+    );
+
 #endif
