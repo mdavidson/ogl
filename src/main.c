@@ -50,7 +50,7 @@ int main( int argc, char *argv[] )
     /*
     Create a windowed mode window and its OpenGL context
     */
-    window = glfwCreateWindow( WINDOW_WIDTH, WINDOW_HEIGHT, "Hello World", NULL, NULL );
+    window = glfwCreateWindow( WINDOW_WIDTH, WINDOW_HEIGHT, "Hello World", glfwGetPrimaryMonitor(), NULL );
     if( !window ) {
         glfwTerminate();
         return( -1 );
