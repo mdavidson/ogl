@@ -166,8 +166,9 @@ static void writeVidModes(void)
     const GLFWvidmode *ptr;
 
     fopen_s(&fp,"vidmodes.si", "w");
-    if (&fp == NULL)
+    if (&fp == NULL){
         error_callback(GLFW_INVALID_VALUE, "Could not open video modes!");
+    }
     else{
         ptr = glfwGetVideoModes(glfwGetPrimaryMonitor(), &count);
 
