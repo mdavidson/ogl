@@ -161,7 +161,7 @@ static void key_callback
 static void writeVidModes(void)
 {
     int i;
-    int *count;
+    int count;
     FILE *fp; 
     const GLFWvidmode *ptr;
 
@@ -169,11 +169,10 @@ static void writeVidModes(void)
     if (&fp == NULL)
         error_callback(1, "Could not open video modes!");
 
-    count = (int *)malloc(sizeof(*count));
-    ptr = glfwGetVideoModes(glfwGetPrimaryMonitor(), count);
+    ptr = glfwGetVideoModes(glfwGetPrimaryMonitor(), &count);
 
     i = 0;
-    while (i < *count){
+    while (i < count){
         fprintf(fp, "-//MODE %d //- \n", i);
         fprintf(fp, "%d R\n", ptr[i].redBits);
         fprintf(fp, "%d G\n", ptr[i].greenBits);
@@ -184,7 +183,7 @@ static void writeVidModes(void)
         i++;
     }
 
-    fclose(fp);
-    free(count);
+    if (&fp != NULL)
+        fclose(fp);
 }
 
