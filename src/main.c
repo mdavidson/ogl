@@ -167,23 +167,23 @@ static void writeVidModes(void)
 
     fopen_s(&fp,"vidmodes.si", "w");
     if (&fp == NULL)
-        error_callback(1, "Could not open video modes!");
+        error_callback(GLFW_INVALID_VALUE, "Could not open video modes!");
+    else{
+        ptr = glfwGetVideoModes(glfwGetPrimaryMonitor(), &count);
 
-    ptr = glfwGetVideoModes(glfwGetPrimaryMonitor(), &count);
+        i = 0;
+        while (i < count){
+            fprintf(fp, "-//MODE %d //- \n", i);
+            fprintf(fp, "%d R\n", ptr[i].redBits);
+            fprintf(fp, "%d G\n", ptr[i].greenBits);
+            fprintf(fp, "%d B\n", ptr[i].blueBits);
+            fprintf(fp, "%d px\n", ptr[i].height);
+            fprintf(fp, "%d px\n", ptr[i].width);
+            fprintf(fp, "%d Hz\n", ptr[i].refreshRate);
+            i++;
+        }
 
-    i = 0;
-    while (i < count){
-        fprintf(fp, "-//MODE %d //- \n", i);
-        fprintf(fp, "%d R\n", ptr[i].redBits);
-        fprintf(fp, "%d G\n", ptr[i].greenBits);
-        fprintf(fp, "%d B\n", ptr[i].blueBits);
-        fprintf(fp, "%d px\n", ptr[i].height);
-        fprintf(fp, "%d px\n", ptr[i].width);
-        fprintf(fp, "%d Hz\n", ptr[i].refreshRate);
-        i++;
-    }
-
-    if (&fp != NULL)
         fclose(fp);
+    }
 }
 
