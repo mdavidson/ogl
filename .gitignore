@@ -16,7 +16,11 @@
 *.exe
 *.out
 *.app
+
+#other stuff
 /src/*.suo
 /src/*.sdf
 /src/Debug
 /src/ogl.vcxproj.user
+/src/ipch/
+*.opensdf
