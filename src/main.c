@@ -29,6 +29,8 @@ static void key_callback
     int mods
     );
 
+static void writeVidModes(void);
+
 int main( int argc, char *argv[] )
 {
     GLFWwindow* window;
@@ -46,6 +48,11 @@ int main( int argc, char *argv[] )
     if( !glfwInit() ) {
         return( -1 );
         }
+
+    /*
+    Get and list video modes available to file
+    */
+    writeVidModes();
 
     /*
     Create a windowed mode window and its OpenGL context
@@ -145,3 +152,39 @@ static void key_callback
     if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
 }
+
+/*
+*
+*   writeVidModes
+*
+*/
+static void writeVidModes(void)
+{
+    int i;
+    int *count;
+    FILE *fp; 
+    const GLFWvidmode *ptr;
+
+    fopen_s(&fp,"vidmodes.si", "w");
+    if (&fp == NULL)
+        error_callback(1, "Could not open video modes!");
+
+    count = (int *)malloc(sizeof(*count));
+    ptr = glfwGetVideoModes(glfwGetPrimaryMonitor(), count);
+
+    i = 0;
+    while (i < *count){
+        fprintf(fp, "-//MODE %d //- \n", i);
+        fprintf(fp, "%d R\n", ptr[i].redBits);
+        fprintf(fp, "%d G\n", ptr[i].greenBits);
+        fprintf(fp, "%d B\n", ptr[i].blueBits);
+        fprintf(fp, "%d px\n", ptr[i].height);
+        fprintf(fp, "%d px\n", ptr[i].width);
+        fprintf(fp, "%d Hz\n", ptr[i].refreshRate);
+        i++;
+    }
+
+    fclose(fp);
+    free(count);
+}
+
