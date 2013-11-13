@@ -24,3 +24,4 @@
 /src/ogl.vcxproj.user
 /src/ipch/
 *.opensdf
+*.si
