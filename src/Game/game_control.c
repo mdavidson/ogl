@@ -1,11 +1,13 @@
-/*
-    game_control.c
-*/
+/** game_control.c
+ ** Author: Mike
+ ** ver. 1.0
+ ** This program is responsible for updating the gamestate.
+ **/
 
 #include <GLFW\glfw3.h>
 
-#include "game_control.h"
 #include "ball_control.h"
+#include "game_control.h"
 
 void init_game_state
     (

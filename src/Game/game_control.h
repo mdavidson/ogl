@@ -4,7 +4,7 @@
 #ifndef __GAME_CONTROL_H
 #define __GAME_CONTROL_H
 
-#include "types.h"
+#include "..\Incl\types.h"
 
 
 #define WINDOW_HEIGHT   720 

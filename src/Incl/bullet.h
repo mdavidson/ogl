@@ -22,3 +22,5 @@ void getBulletPos
     float *x,
     float *y
     );
+
+#endif

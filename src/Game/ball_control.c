@@ -1,11 +1,13 @@
-/*
-    ball_control.c
-*/
+/** ball_control.c
+ ** Author: Mike
+ ** ver. 1.0
+ ** This program is responsible for initializing and controlling the
+ ** movement of the ball on screen.
+ **/
 
 #include <GLFW\glfw3.h>
 
 #include "ball_control.h"
-#include "game_control.h"
 
 /*
 *
