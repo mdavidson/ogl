@@ -23,11 +23,12 @@
 /src/SEI/Msvc/*sdf
 /src/SEI/Msvc/*.suo
 /src/Temp/
-/src/Game/Msvc/ogl.vcxproj.user
+/src/Game/Msvc/Game.vcxproj.user
 /src/SEI/Msvc/ogl.vcxproj.user
 /src/Game/Msvc/ipch/
 /src/SEI/Msvc/ipch/
 /src/SEI/3rdParty/
 /src/Lib/
+/src/og.suo
 *.opensdf
 *.si
