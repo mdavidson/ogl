@@ -29,6 +29,6 @@
 /src/SEI/Msvc/ipch/
 /src/SEI/3rdParty/
 /src/Lib/
-/src/og.suo
+/src/ogl.suo
 *.opensdf
 *.si
