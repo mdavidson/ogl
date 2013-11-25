@@ -1,7 +1,7 @@
 #ifndef __RENDERER_H
 #define __RENDERER_H
 
-#include "..\Game\game_control.h"
+#include "..\Ball\game_control.h"
 
 void render_game
     (

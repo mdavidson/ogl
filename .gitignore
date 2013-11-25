@@ -18,10 +18,16 @@
 *.app
 
 #other stuff
-/src/*.suo
-/src/*.sdf
-/src/Debug
-/src/ogl.vcxproj.user
-/src/ipch/
+/src/Game/Msvc/*.suo
+/src/Game/Msvc/*.sdf
+/src/SEI/Msvc/*sdf
+/src/SEI/Msvc/*.suo
+/src/Temp/
+/src/Game/Msvc/ogl.vcxproj.user
+/src/SEI/Msvc/ogl.vcxproj.user
+/src/Game/Msvc/ipch/
+/src/SEI/Msvc/ipch/
+/src/SEI/3rdParty/
+/src/Lib/
 *.opensdf
 *.si

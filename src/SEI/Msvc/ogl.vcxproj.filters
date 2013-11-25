@@ -1,25 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Main\main.c">
-      <Filter>Main</Filter>
+    <ClCompile Include="..\Ball\ball_control.c">
+      <Filter>Ball</Filter>
     </ClCompile>
-    <ClCompile Include="Main\vid_init.c">
-      <Filter>Main</Filter>
+    <ClCompile Include="..\Ball\game_control.c">
+      <Filter>Ball</Filter>
     </ClCompile>
-    <ClCompile Include="Game\ball_control.c">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\game_control.c">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Callback\err_callbk.c">
+    <ClCompile Include="..\Callback\err_callbk.c">
       <Filter>Callback</Filter>
     </ClCompile>
-    <ClCompile Include="Callback\key_callbk.c">
+    <ClCompile Include="..\Callback\key_callbk.c">
       <Filter>Callback</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer\renderer.c">
+    <ClCompile Include="..\Main\vid_init.c">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Renderer\renderer.c">
       <Filter>Renderer</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,37 +30,37 @@
     <Filter Include="Main">
       <UniqueIdentifier>{6a4b3e6f-420f-4f3c-8a00-28a24d9844e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game">
-      <UniqueIdentifier>{97a4e95c-1673-4736-b637-0d7ab793ca0a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Callback">
       <UniqueIdentifier>{a677d0f9-f6c2-4a87-b7ee-4957f0a1be90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ball">
+      <UniqueIdentifier>{97a4e95c-1673-4736-b637-0d7ab793ca0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main\vid_init.h">
+    <ClInclude Include="..\Ball\ball_control.h">
+      <Filter>Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ball\game_control.h">
+      <Filter>Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Callback\err_callbk.h">
+      <Filter>Callback</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Callback\key_callbk.h">
+      <Filter>Callback</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Incl\bullet.h">
+      <Filter>Incl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Incl\types.h">
+      <Filter>Incl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Main\vid_init.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Game\ball_control.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\game_control.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Callback\err_callbk.h">
-      <Filter>Callback</Filter>
-    </ClInclude>
-    <ClInclude Include="Callback\key_callbk.h">
-      <Filter>Callback</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer\renderer.h">
+    <ClInclude Include="..\Renderer\renderer.h">
       <Filter>Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="Incl\bullet.h">
-      <Filter>Incl</Filter>
-    </ClInclude>
-    <ClInclude Include="Incl\types.h">
-      <Filter>Incl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
